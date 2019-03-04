@@ -24,8 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              { "input": "src/styles.css" },
-              { "input": "node_modules/@ckeditor/ckeditor5-editor-classic/theme/classiceditor.css" }
+              { "input": "src/styles.css" }
             ],
             "scripts": []
           },
