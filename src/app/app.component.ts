@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor5 } from '@ckeditor/ckeditor5-angular/ckeditor';
 
 @Component( {
   selector: 'app-root',
@@ -7,20 +8,13 @@ import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
   styleUrls: [ './app.component.css' ]
 } )
 export class AppComponent {
-  title = 'app';
-  foo = 'bar';
-  ClassicEditorBuild = ClassicEditorBuild;
+  public ClassicEditorBuild = ClassicEditorBuild;
+  public editor: CKEditor5.Editor = null;
 
-  public model = {};
+  public readyEmitter = new EventEmitter<CKEditor5.Editor>();
 
-  public onReady( editor ) {
-    const editableContainer = document.createElement( 'div' );
-    const parent = editor.ui.view.editable.element.parentElement;
-
-    parent.removeChild( editor.ui.view.editable.element );
-    editableContainer.appendChild( editor.ui.view.editable.element );
-
-    parent.appendChild( editor.ui.view.toolbar.element );
-    parent.appendChild( editableContainer );
+  public onReady( editor: CKEditor5.Editor ) {
+    this.editor = editor;
+    this.readyEmitter.emit( this.editor );
   }
 }
