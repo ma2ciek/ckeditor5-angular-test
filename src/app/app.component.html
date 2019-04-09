@@ -5,10 +5,17 @@
   </h1>
 </div>
 
+<h2>Example of usage with *ngIf directive:</h2>
 <button (click)="toggleEditorVisibility()">Toggle editor visibility.</button>
 
 <div *ngIf="editorVisible">
   <ckeditor [editor]="ClassicEditorBuild" (ready)="onReady($event)" [config]="config"></ckeditor>
 </div>
 
+<h2>Example of usage with *ngFor directive:</h2>
 
+<!-- <form #demoForm="ngForm"> -->
+  <div *ngFor="let option of options; let index=index;">
+    <ckeditor [editor]="ClassicEditorBuild" [(ngModel)]="options[index].value" [name]="options[index].id"></ckeditor>
+  </div>
+<!-- </form> -->

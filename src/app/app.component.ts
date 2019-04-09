@@ -1,6 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
-import { CKEditor5 } from '@ckeditor/ckeditor5-angular/ckeditor';
+import { CKEditor5 } from '@ckeditor/ckeditor5-angular';
 
 @Component( {
   selector: 'app-root',
@@ -8,6 +8,8 @@ import { CKEditor5 } from '@ckeditor/ckeditor5-angular/ckeditor';
   styleUrls: [ './app.component.css' ]
 } )
 export class AppComponent {
+  // @ViewChild( 'demoForm' ) demoForm: NgForm;
+
   public ClassicEditorBuild = ClassicEditorBuild;
   public editor: CKEditor5.Editor = null;
   public editorVisible = false;
@@ -26,6 +28,8 @@ export class AppComponent {
       ]
     }
   };
+
+  public options = [ { value: 'foo', id: 'foo' }, { value: 'bar', id: 'bar' } ];
 
   public onReady( editor: CKEditor5.Editor ) {
     this.editor = editor;
