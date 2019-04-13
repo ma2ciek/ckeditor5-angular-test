@@ -4,6 +4,12 @@
     Welcome to the <code>ckeditor5-angular</code> integration test!
   </h1>
 </div>
-<h2 *ngIf="editor">The editor is ready:</h2>
 
-<ckeditor [editor]="ClassicEditorBuild" (ready)="onReady($event)"></ckeditor>
+<mat-tab-group>
+  <mat-tab label="Editor">
+    <h4 mat-dialog-title style="color: #00736e;">Borrower Request</h4>
+    <ckeditor id="editor" tagName="textarea" style="border: 1px solid #00736e; width: 100%;" [editor]="Editor">
+    </ckeditor>
+  </mat-tab>
+  <mat-tab label="Just another tab"></mat-tab>
+</mat-tab-group>
