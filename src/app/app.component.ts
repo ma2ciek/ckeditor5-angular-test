@@ -9,12 +9,31 @@ import { CKEditor5 } from '@ckeditor/ckeditor5-angular/ckeditor';
 } )
 export class AppComponent {
   public ClassicEditorBuild = ClassicEditorBuild;
-  public editor: CKEditor5.Editor = null;
+
+  public model = {
+    htmlContent: {
+      fr: 'Salut tout le monde',
+      en: 'hello welcome'
+    },
+    title: {
+      fr: 'title1',
+      en: 'title2'
+    }
+  };
+
+  public langs = {
+    en: 'en',
+    fr: 'fr'
+  };
+
+  public editorConfig = {};
 
   public readyEmitter = new EventEmitter<CKEditor5.Editor>();
 
   public onReady( editor: CKEditor5.Editor ) {
-    this.editor = editor;
-    this.readyEmitter.emit( this.editor );
+    console.log( this.model );
+    console.log( editor );
   }
+
+
 }

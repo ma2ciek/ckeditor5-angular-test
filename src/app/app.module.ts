@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
-@NgModule({
+@NgModule( {
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    CKEditorModule
+    CKEditorModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [ AppComponent ]
+} )
 export class AppModule { }
