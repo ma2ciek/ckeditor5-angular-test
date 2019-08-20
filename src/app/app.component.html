@@ -5,10 +5,8 @@
   </h1>
 </div>
 
-<ckeditor name="content" [editor]="ClassicEditorBuild" (ready)="onReady($event)" [config]="editorConfig"
-  [(ngModel)]="model.htmlContent[langs.en]">
-</ckeditor>
+<button (click)="toggleEditors()">Toggle editors</button>
 
 <ckeditor name="content" [editor]="ClassicEditorBuild" (ready)="onReady($event)" [config]="editorConfig"
-  [(ngModel)]="model.htmlContent[langs.fr]">
+  [(ngModel)]="model.htmlContent[language]">
 </ckeditor>

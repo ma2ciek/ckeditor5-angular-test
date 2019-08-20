@@ -21,10 +21,7 @@ export class AppComponent {
     }
   };
 
-  public langs = {
-    en: 'en',
-    fr: 'fr'
-  };
+  public language = 'en';
 
   public editorConfig = {};
 
@@ -35,5 +32,7 @@ export class AppComponent {
     console.log( editor );
   }
 
-
+  public toggleEditors() {
+    this.language = this.language === 'en' ? 'fr' : 'en';
+  }
 }
