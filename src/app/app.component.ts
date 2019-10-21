@@ -1,6 +1,11 @@
-import { Component, EventEmitter } from '@angular/core';
-import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
-import { CKEditor5 } from '@ckeditor/ckeditor5-angular/ckeditor';
+import { Component } from '@angular/core';
+
+import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
+import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
+import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 
 @Component( {
   selector: 'app-root',
@@ -8,13 +13,10 @@ import { CKEditor5 } from '@ckeditor/ckeditor5-angular/ckeditor';
   styleUrls: [ './app.component.css' ]
 } )
 export class AppComponent {
-  public ClassicEditorBuild = ClassicEditorBuild;
-  public editor: CKEditor5.Editor = null;
+  public Editor = ClassicEditor;
 
-  public readyEmitter = new EventEmitter<CKEditor5.Editor>();
-
-  public onReady( editor: CKEditor5.Editor ) {
-    this.editor = editor;
-    this.readyEmitter.emit( this.editor );
-  }
+  public config = {
+    plugins: [ Essentials, Paragraph, Bold, Italic, Heading ],
+    toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo', ]
+  };
 }

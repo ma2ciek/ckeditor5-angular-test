@@ -27,15 +27,4 @@ describe( 'AppComponent', () => {
 
     expect( compiled.querySelector( 'h1' ).textContent ).toContain( 'Welcome to the ckeditor5-angular integration test!' );
   } );
-
-  it( 'should create an instance of ckeditor component', done => {
-    const fixture = TestBed.createComponent( AppComponent );
-    fixture.detectChanges();
-
-    fixture.componentInstance.readyEmitter.subscribe( () => {
-      expect( fixture.componentInstance.editor ).toBeTruthy();
-
-      done();
-    } );
-  } );
 } );

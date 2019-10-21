@@ -4,6 +4,6 @@
     Welcome to the <code>ckeditor5-angular</code> integration test!
   </h1>
 </div>
-<h2 *ngIf="editor">The editor is ready:</h2>
+<h2>The editor is ready:</h2>
 
-<ckeditor [editor]="ClassicEditorBuild" (ready)="onReady($event)"></ckeditor>
+<ckeditor [editor]="Editor" [config]="config" data="Foo"></ckeditor>
