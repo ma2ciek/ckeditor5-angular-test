@@ -6,4 +6,17 @@
 </div>
 <h2 *ngIf="editor">The editor is ready:</h2>
 
-<ckeditor [editor]="ClassicEditorBuild" (ready)="onReady($event)"></ckeditor>
+<ckeditor
+  [editor]="ClassicEditorBuild"
+  [config]="{
+    toolbar: [ 'bold', 'italic', 'blockQuote', 'numberedList', 'bulletedList', 'link', 'heading' ],
+    placeholder: 'A generic placeholder',
+    ui: {
+      height: '30rem',
+      resize_dir: 'vertical',
+      resize_minHeight: '30rem',
+      resize_enabled: false
+    }
+  }"
+  (ready)="onReady($event)">
+</ckeditor>
