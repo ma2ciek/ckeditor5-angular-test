@@ -2,6 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
+## Linking local version
+
+```
+npm run link
+```
+
+The script assumes the following directory structure:
+
+```
+ckeditor5-angular-test
+ckeditor5-angular
+```
+
+And that the ckeditor5-angular` library is built (`npm run build-package` is executed in the library).
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
