@@ -15,7 +15,7 @@ ckeditor5-angular-test
 ckeditor5-angular
 ```
 
-And that the ckeditor5-angular` library is built (`npm run build-package` is executed in the library).
+And that the `ckeditor5-angular` library is built (`npm run build-package` is executed in the library).
 
 
 ## Development server
